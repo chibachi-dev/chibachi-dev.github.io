@@ -1,23 +1,85 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello, GitHub Pages</title>
-  <style>
-    body {
-      font-family: system-ui, sans-serif;
-      max-width: 40rem;
-      margin: 4rem auto;
-      padding: 0 1rem;
-      line-height: 1.6;
-      color: #222;
-      background: #fafafa;
-    }
-  </style>
-</head>
-<body>
-  <h1>Hello, world!</h1>
-  <p>If you can see this, GitHub Pages is working.</p>
-</body>
-</html>
+---
+layout: default
+body_class: page-home
+---
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container hero__inner">
+    <div class="hero__copy">
+      <p class="kicker">// indie game studio</p>
+      <h1 class="hero__title" id="hero-title">Plutonium<br>Pigeons</h1>
+      <p class="hero__lede">A two-person indie studio making bullet hells for PC.</p>
+      <p class="terminal" aria-hidden="true">&gt; {{ site.data.games | size }} games released on itch.io<span class="cursor"></span></p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#games"><span aria-hidden="true">▶</span> Play our games</a>
+        <a class="btn" href="{{ '/devlog/' | relative_url }}">Read the devlog</a>
+      </div>
+    </div>
+
+    <div class="hero__art" aria-hidden="true">
+      <div class="ring ring--outer" style="--n: 24">
+        {% for i in (1..24) %}<span style="--i: {{ i }}"></span>{% endfor %}
+      </div>
+      <div class="ring ring--inner" style="--n: 12">
+        {% for i in (1..12) %}<span style="--i: {{ i }}"></span>{% endfor %}
+      </div>
+      {% include pigeon.html class="hero__pigeon" %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="games" aria-labelledby="games-title">
+  <div class="container">
+    {% include section-heading.html id="games" num="01" title="Games" %}
+    <ul class="game-grid">
+      {% for game in site.data.games %}
+        {% include game-card.html game=game %}
+      {% endfor %}
+    </ul>
+    <p class="section__more">
+      <a class="btn" href="{{ site.itch_url }}">All games on itch.io <span aria-hidden="true">▸</span></a>
+    </p>
+  </div>
+</section>
+
+<section class="section" id="devlog" aria-labelledby="devlog-title">
+  <div class="container">
+    {% include section-heading.html id="devlog" num="02" title="Devlog" %}
+    {% if site.posts.size > 0 %}
+    <div class="post-grid">
+      {% for post in site.posts limit: 3 %}
+        {% include post-card.html post=post %}
+      {% endfor %}
+    </div>
+    <p class="section__more">
+      <a class="btn" href="{{ '/devlog/' | relative_url }}">All devlogs <span aria-hidden="true">▸</span></a>
+    </p>
+    {% else %}
+    <p class="empty-state">No transmissions yet. Check back soon.</p>
+    {% endif %}
+  </div>
+</section>
+
+<section class="section" id="team" aria-labelledby="team-title">
+  <div class="container">
+    {% include section-heading.html id="team" num="03" title="The Pigeons" %}
+    <div class="team-grid">
+      {% for member in site.data.team %}
+        {% include team-card.html member=member %}
+      {% endfor %}
+    </div>
+    <p class="section__more">
+      <a class="btn" href="{{ '/about/' | relative_url }}">About the studio <span aria-hidden="true">▸</span></a>
+    </p>
+  </div>
+</section>
+
+<section class="section section--contact" id="contact" aria-labelledby="contact-title">
+  <div class="container">
+    {% include section-heading.html id="contact" num="04" title="Contact" %}
+    <div class="contact-panel reveal">
+      <p class="terminal">&gt; open channel --to plutonium-pigeons<span class="cursor"></span></p>
+      <p class="contact-panel__text">Questions, press, collabs, or just want to say hi? Send us a message.</p>
+      <a class="btn btn--primary" href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>
+    </div>
+  </div>
+</section>

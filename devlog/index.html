@@ -1,0 +1,26 @@
+---
+layout: page
+title: Devlog
+kicker: // transmissions from the coop
+lede: Development updates, behind-the-scenes notes, and whatever we're building next.
+description: Development updates from Plutonium Pigeons.
+---
+{% if site.posts.size > 0 %}
+  {% assign years = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+  {% for year in years %}
+  <section class="devlog-year" aria-labelledby="year-{{ year.name }}">
+    <h2 class="devlog-year__title" id="year-{{ year.name }}">{{ year.name }}</h2>
+    <div class="post-grid">
+      {% for post in year.items %}
+        {% include post-card.html post=post %}
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+{% else %}
+  <p class="empty-state">No transmissions yet. Check back soon.</p>
+{% endif %}
+
+<p class="section__more">
+  <a class="btn" href="{{ '/devlog/feed.xml' | relative_url }}">RSS feed <span aria-hidden="true">▸</span></a>
+</p>

@@ -1,0 +1,75 @@
+# Games shown on the home page, in display order.
+#
+#   title:    Game name
+#   url:      Where the card links. An itch.io page, or an internal page like /games/my-game/
+#   cover:    Cover image. A full URL, or a file in the repo like /assets/img/games/my-game.png
+#   tagline:  One-line pitch
+#   tags:     Short labels shown under the tagline
+#   featured: true makes the card twice as wide (use for one game at a time)
+
+- title: "星辰再生 ~ Rho's Odyssey"
+  url: https://chibachi.itch.io/rhos-odyssey
+  cover: https://img.itch.zone/aW1nLzE2MjI1MzYxLnBuZw==/315x250%23c/RXPys4.png
+  tagline: Embark on an interstellar journey of redemption and discovery in a battle against the unknown!
+  tags: [Shooter, Browser]
+  featured: true
+
+- title: Oregon Nell
+  url: https://chibachi.itch.io/oregon-nell
+  cover: https://img.itch.zone/aW1nLzg3NTI2NjEucG5n/315x250%23c/48CUJ3.png
+  tagline: You're trapped in a cell and rapidly growing. Can you make it out in time?
+  tags: [Shooter]
+
+- title: "Starship Sentinel: Insurgency"
+  url: https://chibachi.itch.io/starship-sentinel-insurgency
+  cover: https://img.itch.zone/aW1nLzEyMTEzMjMxLnBuZw==/315x250%23c/ME39%2Bm.png
+  tagline: You're sent on a mission to defend a cargo ship from an onslaught of rogue robots!
+  tags: [Shooter, Browser]
+
+- title: Pomelo vs. the Universe
+  url: https://chibachi.itch.io/pomelo-vs-the-universe-old
+  cover: https://img.itch.zone/aW1nLzY5Nzc4NjkuZ2lm/315x250%23c/Z3Ybzn.gif
+  tagline: She just wants the thing!
+  tags: [Adventure, Browser]
+
+- title: Half Moon Manor
+  url: https://chibachi.itch.io/half-moon-manor
+  cover: https://img.itch.zone/aW1nLzExODA1Mjc4LnBuZw==/315x250%23c/noTC8o.png
+  tagline: A phone call leads you to a mysterious house late at night...
+  tags: [Action, Browser]
+
+- title: Serpent of the Storm ~ Fall of Yamata-no-Orochi
+  url: https://chibachi.itch.io/serpent-of-the-storm-fall-of-yamata-no-orochi
+  cover: https://img.itch.zone/aW1nLzE0NzM4NDYyLnBuZw==/315x250%23c/0NDu68.png
+  tagline: A bullet hell retelling of Susanoo's victory over the 8-headed serpent, Yamata-no-Orochi!
+  tags: [Shooter]
+
+- title: Amphibian Arsenal
+  url: https://chibachi.itch.io/amphibian-arsenal
+  cover: https://img.itch.zone/aW1nLzg5MzIwMzgucG5n/315x250%23c/xsg75b.png
+  tagline: You're a frog. Survive.
+  tags: [Shooter, Browser]
+
+- title: Undefined Esotericism
+  url: https://chibachi.itch.io/undefined-esotericism
+  cover: https://img.itch.zone/aW1nLzU5NTUwODAucG5n/315x250%23c/J8t2Vj.png
+  tagline: Restore the light in the realm!
+  tags: [Adventure]
+
+- title: The Ides of March
+  url: https://chibachi.itch.io/the-ides-of-march
+  cover: https://img.itch.zone/aW1nLzQ4OTY0NDAucG5n/315x250%23c/K5qbHE.png
+  tagline: Don't get stabbed!
+  tags: [Survival]
+
+- title: Off Course
+  url: https://chibachi.itch.io/off-course
+  cover: https://img.itch.zone/aW1nLzQ2MDUzNzcucG5n/315x250%23c/CEECe9.png
+  tagline: "Entry for Mini Jam 67: Void."
+  tags: [Adventure, Browser, Game Jam]
+
+- title: Lure of the Yamabiko
+  url: https://chibachi.itch.io/lure-of-the-yamabiko
+  cover: https://img.itch.zone/aW1nLzU3ODE2NDIucG5n/315x250%23c/UenH2k.png
+  tagline: Infinite runner meets bullet hell!
+  tags: [Adventure, Browser]

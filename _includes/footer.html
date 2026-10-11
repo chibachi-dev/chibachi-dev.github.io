@@ -1,0 +1,13 @@
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <p class="site-footer__copy">
+      {% include pigeon.html class="site-footer__icon" %}
+      &copy; {{ site.time | date: '%Y' }} {{ site.title }}
+    </p>
+    <ul class="site-footer__links">
+      <li><a href="{{ site.itch_url }}">itch.io</a></li>
+      <li><a href="mailto:{{ site.contact_email }}">Email</a></li>
+      <li><a href="{{ '/devlog/feed.xml' | relative_url }}">RSS</a></li>
+    </ul>
+  </div>
+</footer>

@@ -1,0 +1,34 @@
+---
+layout: page
+title: About
+permalink: /about/
+kicker: // about the studio
+description: Meet the two pigeons behind Plutonium Pigeons, an indie studio making bullet hell games for PC.
+---
+<div class="about-intro prose reveal">
+  <p>
+    Plutonium Pigeons is a two-person indie studio making bullet hell games for PC.
+    We've released {{ site.data.games | size }} games so far, and you can play all of them on
+    <a href="{{ site.itch_url }}">itch.io</a>.
+  </p>
+  <p>
+    We'll post development updates in the <a href="{{ '/devlog/' | relative_url }}">devlog</a>.
+  </p>
+</div>
+
+<section class="section section--tight" aria-labelledby="team-title">
+  {% include section-heading.html id="team" num="//" title="The Pigeons" %}
+  <div class="team-grid team-grid--full">
+    {% for member in site.data.team %}
+      {% include team-card.html member=member full=true %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section section--tight" aria-labelledby="contact-title">
+  {% include section-heading.html id="contact" num="//" title="Say hi" %}
+  <div class="contact-panel reveal">
+    <p class="contact-panel__text">The fastest way to reach us is email.</p>
+    <a class="btn btn--primary" href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>
+  </div>
+</section>

@@ -1,0 +1,59 @@
+# Site settings ---------------------------------------------------------------
+title: Plutonium Pigeons
+description: >-
+  Plutonium Pigeons is a two-person indie studio making bullet hell games for PC.
+url: "https://www.plutoniumpigeons.com"
+baseurl: ""
+lang: en
+# Post dates are interpreted in this timezone (posts dated "today" publish once it's today here)
+timezone: Asia/Tokyo
+
+# Used across the site (contact section, footer, hero buttons)
+contact_email: chibachi.tv@gmail.com
+itch_url: https://chibachi.itch.io/
+
+# Picked up by jekyll-seo-tag for social cards
+twitter:
+  username: chibachi_tv
+  card: summary
+logo: /assets/img/pigeon.svg
+social:
+  name: Plutonium Pigeons
+  links:
+    - https://chibachi.itch.io/
+    - https://x.com/chibachi_tv
+
+# Devlog ----------------------------------------------------------------------
+# Posts live in _posts/ as YYYY-MM-DD-some-title.md
+permalink: /devlog/:year/:month/:day/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: chibachi
+
+feed:
+  path: devlog/feed.xml
+
+# Build -----------------------------------------------------------------------
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  hard_wrap: false
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .jekyll-cache
+  - docker-compose.yml

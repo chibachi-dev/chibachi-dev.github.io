@@ -1,0 +1,20 @@
+{% assign g = include.game %}
+{% if g.url contains '://' %}{% assign href = g.url %}{% else %}{% assign href = g.url | relative_url %}{% endif %}
+{% if g.cover contains '://' %}{% assign cover = g.cover %}{% else %}{% assign cover = g.cover | relative_url %}{% endif %}
+<li class="game-card{% if g.featured %} game-card--featured{% endif %} reveal">
+  <a class="game-card__link" href="{{ href }}">
+    <div class="game-card__media">
+      {% if g.cover %}<img src="{{ cover }}" alt="" width="315" height="250" loading="lazy" decoding="async">{% endif %}
+    </div>
+    <div class="game-card__body">
+      <h3 class="game-card__title">{{ g.title }}</h3>
+      <p class="game-card__tagline">{{ g.tagline }}</p>
+      {% if g.tags %}
+      <ul class="tags" aria-label="Tags">
+        {% for tag in g.tags %}<li>{{ tag }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+      <span class="game-card__cta">{% if g.url contains 'itch.io' %}Play on itch.io{% else %}View game{% endif %} <span aria-hidden="true">▸</span></span>
+    </div>
+  </a>
+</li>

@@ -1,0 +1,14 @@
+<header class="site-header">
+  <nav class="nav container" aria-label="Main">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      {% include pigeon.html class="brand__icon" %}
+      <span class="brand__name">Plutonium<br>Pigeons</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="{{ '/#games' | relative_url }}">Games</a></li>
+      <li><a href="{{ '/devlog/' | relative_url }}"{% if page.url contains '/devlog/' %} aria-current="page"{% endif %}>Devlog</a></li>
+      <li><a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}>About</a></li>
+      <li><a href="{{ '/#contact' | relative_url }}">Contact</a></li>
+    </ul>
+  </nav>
+</header>

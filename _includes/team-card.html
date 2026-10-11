@@ -1,0 +1,20 @@
+{% assign m = include.member %}
+<article class="team-card{% if include.full %} team-card--full{% endif %} reveal" id="{{ m.id }}"{% if m.neck %} style="--accent: {{ m.neck }}"{% endif %}>
+  <div class="team-card__avatar">
+    {% if m.avatar %}
+      <img src="{{ m.avatar | relative_url }}" alt="" width="96" height="96" loading="lazy">
+    {% else %}
+      {% include pigeon.html neck=m.neck %}
+    {% endif %}
+  </div>
+  <div class="team-card__body">
+    <h3 class="team-card__name">{{ m.name }}</h3>
+    {% if m.role %}<p class="team-card__role">{{ m.role }}</p>{% endif %}
+    {% if m.bio %}<div class="team-card__bio">{{ m.bio | markdownify }}</div>{% endif %}
+    {% if m.links.size > 0 %}
+    <ul class="link-chips" aria-label="{{ m.name }} links">
+      {% for link in m.links %}<li><a href="{{ link.url }}">{{ link.label }}</a></li>{% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</article>

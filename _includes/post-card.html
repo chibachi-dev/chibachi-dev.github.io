@@ -1,0 +1,13 @@
+{% assign post = include.post %}
+{% assign author = site.data.team | where: "id", post.author | first %}
+<article class="post-card reveal">
+  <a class="post-card__link" href="{{ post.url | relative_url }}">
+    <p class="post-card__meta">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
+      {% if author %}<span>// {{ author.name }}</span>{% endif %}
+    </p>
+    <h3 class="post-card__title">{{ post.title }}</h3>
+    <p class="post-card__excerpt">{{ post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 160 }}</p>
+    <span class="post-card__cta">Read log <span aria-hidden="true">▸</span></span>
+  </a>
+</article>

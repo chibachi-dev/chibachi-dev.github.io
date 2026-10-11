@@ -1,0 +1,52 @@
+---
+layout: default
+---
+{% assign author = site.data.team | where: "id", page.author | first %}
+{% assign words = content | number_of_words %}
+{% assign minutes = words | divided_by: 200 | at_least: 1 %}
+<article class="post container container--narrow">
+  <header class="post__header">
+    <a class="back-link" href="{{ '/devlog/' | relative_url }}"><span aria-hidden="true">◂</span> Devlog</a>
+    <p class="post__meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+      {% if author %}<span>// {{ author.name }}</span>{% endif %}
+      <span>// {{ minutes }} min read</span>
+    </p>
+    <h1 class="post__title">{{ page.title }}</h1>
+    {% if page.tags.size > 0 %}
+    <ul class="tags" aria-label="Tags">
+      {% for tag in page.tags %}<li>{{ tag }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+  </header>
+
+  {% if page.image %}
+  <img class="post__cover" src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: '' }}">
+  {% endif %}
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  <footer class="post__footer">
+    {% if author %}
+      <p class="post__footer-label">Logged by</p>
+      {% include team-card.html member=author %}
+    {% endif %}
+
+    <nav class="post-nav" aria-label="More posts">
+      {% if page.previous %}
+      <a class="post-nav__link" href="{{ page.previous.url | relative_url }}">
+        <span class="post-nav__dir"><span aria-hidden="true">◂</span> Older</span>
+        <span class="post-nav__title">{{ page.previous.title }}</span>
+      </a>
+      {% endif %}
+      {% if page.next %}
+      <a class="post-nav__link post-nav__link--next" href="{{ page.next.url | relative_url }}">
+        <span class="post-nav__dir">Newer <span aria-hidden="true">▸</span></span>
+        <span class="post-nav__title">{{ page.next.title }}</span>
+      </a>
+      {% endif %}
+    </nav>
+  </footer>
+</article>

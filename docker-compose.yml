@@ -1,0 +1,20 @@
+# Local preview without installing Ruby:  docker compose up
+# Then open http://localhost:8080 (pages rebuild automatically when you save).
+# Port 4000 is reserved by Windows on some machines, so the site is mapped to 8080.
+# Use a different one with e.g.  JEKYLL_PORT=9000 docker compose up
+services:
+  site:
+    image: ruby:3.3
+    working_dir: /srv/jekyll
+    command: >-
+      bash -c "bundle install &&
+      bundle exec jekyll serve --host 0.0.0.0 --livereload --force_polling"
+    ports:
+      - "${JEKYLL_PORT:-8080}:4000"
+      - "35729:35729"
+    volumes:
+      - .:/srv/jekyll
+      - bundle:/usr/local/bundle
+
+volumes:
+  bundle:

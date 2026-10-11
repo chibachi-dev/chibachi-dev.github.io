@@ -1,0 +1,40 @@
+# Team members, shown on the home page and the About page.
+#
+#   id:     Lowercase key. Devlog posts use it in `author:` front matter.
+#   name:   Display name
+#   role:   Short role line
+#   neck:   Accent color for the pixel-pigeon avatar (used when there's no avatar image)
+#   avatar: Optional image path, e.g. /assets/img/team/chibachi.png (square, pixel art looks best)
+#   bio:    A few sentences. Markdown is allowed.
+#   links:  Any number of { label, url } pairs
+
+- id: chibachi
+  name: chibachi
+  role: Co-founder
+  neck: "#7cff4f"
+  bio: >-
+    A Japan-based game developer. I like bullet hells!
+  links:
+    - label: itch.io
+      url: https://chibachi.itch.io/
+    - label: X
+      url: https://x.com/chibachi_tv
+    # - label: Bluesky
+    #   url: https://bsky.app/profile/your-handle
+    # - label: YouTube
+    #   url: https://youtube.com/@your-handle
+
+- id: snifflypigeon
+  name: SnifflyPigeon
+  role: Co-founder
+  neck: "#ff5fd2"
+  bio: >-
+    She/her. V-tuber. Here to have fun and do things adequately!
+    I really enjoy horror games! Let's gooo. ✨
+  links:
+    - label: X
+      url: https://x.com/SnifflyPidge
+    - label: Twitch
+      url: https://twitch.tv/snifflypigeon
+    - label: YouTube
+      url: https://youtube.com/@SnifflyPigeon
